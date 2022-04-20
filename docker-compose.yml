@@ -1,0 +1,81 @@
+version: "3.8"
+
+services:
+  admin:
+    container_name: admin_container
+    build:  
+      context:  .
+      dockerfile: ./admin/Dockerfile
+    ports:
+      - "9003:9003"
+    image:  admin:latest
+  api-gateway:
+    container_name: api-gateway_container
+    build:  
+      context:  .
+      dockerfile: ./api-gateway/Dockerfile
+    depends_on:
+      - db
+    ports:
+      - "80:9191"
+    image:  api-gateway:latest
+  booking-service:
+    container_name: booking-service_container
+    build:  
+      context:  .
+      dockerfile: ./booking-service/Dockerfile
+    depends_on:
+      - db
+    ports:
+      - "9004:9004"
+    image:  booking-service:latest
+  notification-service:
+    container_name: notification-service_container
+    build:  
+      context:  .
+      dockerfile: ./notification-service/Dockerfile
+    depends_on:
+      - db
+    ports:
+      - "9005:9005"
+    image:  notification-service:latest
+  payment-service:
+    container_name: payment-service_container
+    build:  
+      context:  .
+      dockerfile: ./payment-service/Dockerfile
+    depends_on:
+      - db
+    ports:
+      - "9006:9006"
+    image:  payment-service:latest
+  service-consumer-service:
+    container_name: service-consumer-service_container
+    build:  
+      context:  .
+      dockerfile: ./service-consumer-service/Dockerfile
+    depends_on:
+      - db
+    ports:
+      - "9006:9006"
+    image:  service-consumer-service:latest
+  service-producer-service:
+    container_name: service-producer-service_container
+    build:  
+      context:  .
+      dockerfile: ./service-producer-service/Dockerfile
+    depends_on:
+      - db
+    ports:
+      - "9006:9006"
+    image:  service-producer-service:latest
+  service-registry:
+    container_name: service-registry_container
+    build:  
+      context:  .
+      dockerfile: ./service-registry/Dockerfile
+    depends_on:
+      - db
+    ports:
+      - "9006:9006"
+    image:  service-registry:latest

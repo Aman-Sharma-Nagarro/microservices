@@ -1,0 +1,422 @@
+{
+	"info": {
+		"_postman_id": "fc669236-971c-4de8-aadb-2f31903ff709",
+		"name": "NAGP-Microservices",
+		"description": "NAGP Assignment for Microservices.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Service Providers",
+			"item": [
+				{
+					"name": "Add Service Provider",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"serviceProviderName\":\t\"ABC services\",\r\n    \"getServiceProviderAddress\": \"addr 1\",\r\n    \"services\": \"plumber\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9001/service-provider/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9001",
+							"path": [
+								"service-provider",
+								""
+							]
+						},
+						"description": "Add a Service Provider for Service-Provider Microservice"
+					},
+					"response": []
+				},
+				{
+					"name": "Get Service Provider",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9001/service-provider/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9001",
+							"path": [
+								"service-provider",
+								"1"
+							]
+						},
+						"description": "Get a Service Provider by ID"
+					},
+					"response": []
+				}
+			],
+			"description": "Request Related to Service Providers."
+		},
+		{
+			"name": "Service Consumers",
+			"item": [
+				{
+					"name": "Add Service Consumer",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"consumer a\",\r\n    \"address\":  \"address a\",\r\n    \"phoneNumber\":  \"9999988888\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9002/service-consumer/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9002",
+							"path": [
+								"service-consumer",
+								""
+							]
+						},
+						"description": "Add a Service Consumer in microservice."
+					},
+					"response": []
+				},
+				{
+					"name": "Get Service Consumer",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9002/service-consumer/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9002",
+							"path": [
+								"service-consumer",
+								"1"
+							]
+						},
+						"description": "Get a Service Consumer by ID"
+					},
+					"response": []
+				}
+			],
+			"description": "Requests related to Service Consumers."
+		},
+		{
+			"name": "Admins",
+			"item": [
+				{
+					"name": "Add Admin",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"consumer a\",\r\n    \"phoneNumber\":  \"1111122222\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9003/admin/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9003",
+							"path": [
+								"admin",
+								""
+							]
+						},
+						"description": "Add a Service Consumer in microservice."
+					},
+					"response": []
+				},
+				{
+					"name": "Get Admin",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9003/admin/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9003",
+							"path": [
+								"admin",
+								"1"
+							]
+						},
+						"description": "Get a Service Consumer by ID"
+					},
+					"response": []
+				}
+			],
+			"description": "Requests related to Service Consumers."
+		},
+		{
+			"name": "Booking Service",
+			"item": [
+				{
+					"name": "Add Booking ",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"serviceProviderId\":    \"22\",\r\n    \"serviceConsumerId\":    \"55\",\r\n    \"adminId\":  \"1\",\r\n    \"LocalDateTime\":   \"2022-04-20T09:48:35.888578\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9004/booking-service/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9004",
+							"path": [
+								"booking-service",
+								""
+							]
+						},
+						"description": "Add a bookings"
+					},
+					"response": []
+				},
+				{
+					"name": "Get Booking",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": ""
+						},
+						"description": "Get a booking by booking id"
+					},
+					"response": []
+				}
+			],
+			"description": "This service deals with Bookings\r\n"
+		},
+		{
+			"name": "Notification Service",
+			"item": [
+				{
+					"name": "Add Notification",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"sender\":   \"1\",\r\n    \"receiver\": \"1\",\r\n    \"message\":  \"notified\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9005/notification-service/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9005",
+							"path": [
+								"notification-service",
+								""
+							]
+						},
+						"description": "adds a notification"
+					},
+					"response": []
+				},
+				{
+					"name": "Get Notification",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9005/notification-service/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9005",
+							"path": [
+								"notification-service",
+								"1"
+							]
+						},
+						"description": "adds a notification"
+					},
+					"response": []
+				}
+			],
+			"description": "Sends notification for A to B with message m."
+		},
+		{
+			"name": "Payment Service",
+			"item": [
+				{
+					"name": "Add Payment",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"bookingId\":   \"1\",\r\n    \"amount\": \"100\",\r\n    \"valid\":  \"false\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9006/payment/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9006",
+							"path": [
+								"payment",
+								""
+							]
+						},
+						"description": "adds a notification"
+					},
+					"response": []
+				},
+				{
+					"name": "Get Payment by ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9006/payment/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9006",
+							"path": [
+								"payment",
+								""
+							]
+						},
+						"description": "adds a notification"
+					},
+					"response": []
+				}
+			],
+			"description": "Service Deals with payment"
+		},
+		{
+			"name": "API Gateway",
+			"item": [
+				{
+					"name": "Api Home",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9191/payment/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9191",
+							"path": [
+								"payment",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Order Service",
+			"item": [
+				{
+					"name": "Add Order",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9009/order-service/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9009",
+							"path": [
+								"order-service",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get order",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9009/order-service/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9009",
+							"path": [
+								"order-service",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
